@@ -2,8 +2,8 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     application
-    kotlin("jvm")
-    id("org.openjfx.javafxplugin")
+    id("org.jetbrains.kotlin.jvm") version "1.9.23"
+    id("org.openjfx.javafxplugin") version "0.1.0"
 }
 
 repositories {
@@ -20,7 +20,7 @@ dependencies {
     // or gradle will substitute this dependency with local 'logger' sources
     //  if we add 'includeBuild("logger")' to our 'settings.gradle.kts' file
 
-    implementation(kotlin("stdlib-jdk8"))
+    implementation(kotlin("stdlib"))
     implementation(kotlin("reflect"))
     implementation("no.tornado:tornadofx:$`tornadofx-version`") {
         exclude("org.jetbrains.kotlin")
